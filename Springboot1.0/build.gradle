@@ -20,7 +20,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 
 jar {
-    baseName = 'springboot1.0'
+    baseName = 'spring-boot1.0'
     version =  '0.1.0'
 }
 
