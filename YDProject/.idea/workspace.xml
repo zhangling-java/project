@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d116cf45-16c2-41d3-b644-c1a7f8bd56f4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/model/db/UserDBModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/model/db/UserDBModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot/src/main/java/com/zhangling/spring/boot/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../spring-boot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../spring-boot/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d116cf45-16c2-41d3-b644-c1a7f8bd56f4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -576,7 +569,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="120" />
     <option name="y" value="105" />
     <option name="width" value="2335" />
@@ -771,7 +764,7 @@
     <option name="totallyTimeSpent" value="4169000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="120" y="105" width="2335" height="1141" extended-state="1" />
+    <frame x="120" y="105" width="2335" height="1141" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
