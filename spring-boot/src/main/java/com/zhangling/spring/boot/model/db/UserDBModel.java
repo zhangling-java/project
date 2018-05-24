@@ -25,6 +25,16 @@ public class UserDBModel {
     private long phone;
     private String email;
 
+    public int getPasswordEncryptedCount() {
+        return passwordEncryptedCount;
+    }
+
+    public void setPasswordEncryptedCount(int passwordEncryptedCount) {
+        this.passwordEncryptedCount = passwordEncryptedCount;
+    }
+
+    private int passwordEncryptedCount;
+
     public String getAccount() {
         return account;
     }
