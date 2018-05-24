@@ -4,8 +4,6 @@ public class UserModel {
     private String account;
     private String name;
     private String nickName;
-    private String password;
-    private String salt;
     private long phone;
     private String email;
 
@@ -31,22 +29,6 @@ public class UserModel {
 
     public void setNickName(String nickName) {
         this.nickName = nickName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public long getPhone() {
