@@ -1,4 +1,4 @@
-package com.zhangling.spring.boot;
+package com.zhangling.spring.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
