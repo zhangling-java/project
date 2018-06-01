@@ -19,4 +19,30 @@ public class Application extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
     }
+
+    //nginx
+    /*brew install nginx
+    *cd /usr/local/etc/nginx
+    *vim nginx.config
+    *upstream  key1
+{
+    server   10.0.1.50:8080;
+    server   10.0.1.51:8080;
+}
+
+upstream  key2
+{
+    server   10.0.1.50:8080;
+    server   10.0.1.51:8080;
+}
+
+    *location / {
+        proxy_pass        key1;
+        }
+    *
+    *pkill -9 nginx  杀进程
+    *brew services start nginx 启动nginx
+    *
+    * */
+
 }
