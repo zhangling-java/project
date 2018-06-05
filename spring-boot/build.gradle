@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url 'http://maven.aliyun.com/nexus/content/groups/public/' //jar 包需要
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
@@ -17,6 +20,10 @@ apply plugin: 'war'
 jar {
     baseName = 'spring-boot'
     version =  '0.1.0'
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Main-Class': 'com.zhangling.spring.boot.Application'
+    }
 }
 
 group 'com.zhangling'
