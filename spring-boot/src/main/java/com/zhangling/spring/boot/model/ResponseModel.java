@@ -1,5 +1,4 @@
 package com.zhangling.spring.boot.model;
-
 public class ResponseModel<T> {
     private boolean success;
 

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Start-Class: com.zhangling.spring.cloud.Application
+Main-Class: org.springframework.boot.loader.JarLauncher
+

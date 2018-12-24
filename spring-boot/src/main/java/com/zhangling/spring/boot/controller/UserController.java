@@ -28,7 +28,8 @@ public class UserController {
     @ResponseBody
     @PostMapping("register")
     public ResponseModel register(@Valid @RequestBody UserRegisterRequestModel userRegisterRequestModel){
-        ResponseModel userModelResponseModel = new ResponseModel();
+        ResponseModel<UserModel> userModelResponseModel = new ResponseModel();
+        ResponseModel<ExceptionDescriptionModel> exceptionDescriptionResponseModel = new ResponseModel();
         try {
             UserDBModel userDBModel = JSON.parseObject(JSON.toJSONString(userRegisterRequestModel),UserDBModel.class);
             StringUtil.PasswordUtil.PasswordModel passwordModel = StringUtil.PasswordUtil.generate(userDBModel.getPassword(),StringUtil.PasswordUtil.Type.MD5);
@@ -39,16 +40,17 @@ public class UserController {
             userModelResponseModel.setData(userModel);
             userModelResponseModel.setSuccess(true);
         }catch (UnsupportedEncodingException e) {
+
             ExceptionDescriptionModel exceptionDescriptionModel = new ExceptionDescriptionModel();
             exceptionDescriptionModel.setMessage(e.getMessage());
-            userModelResponseModel.setData(exceptionDescriptionModel);
+            exceptionDescriptionResponseModel.setData(exceptionDescriptionModel);
         } catch (ServerException e) {
             if (e.getExceptionDescriptionModel() != null){
-                userModelResponseModel.setData(e.getExceptionDescriptionModel());
+                exceptionDescriptionResponseModel.setData(e.getExceptionDescriptionModel());
             }else {
                 ExceptionDescriptionModel exceptionDescriptionModel = new ExceptionDescriptionModel();
                 exceptionDescriptionModel.setMessage(e.getMessage());
-                userModelResponseModel.setData(exceptionDescriptionModel);
+                exceptionDescriptionResponseModel.setData(exceptionDescriptionModel);
             }
         }
         return  userModelResponseModel;
