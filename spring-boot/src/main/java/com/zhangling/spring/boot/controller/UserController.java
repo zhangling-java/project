@@ -11,6 +11,10 @@ import com.zhangling.spring.boot.model.ui.UserModel;
 import com.zhangling.spring.boot.repository.UserRepository;
 import com.zhangling.spring.boot.service.UserService;
 import com.zhangling.spring.boot.util.StringUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +23,7 @@ import java.io.UnsupportedEncodingException;
 
 @RestController
 @RequestMapping("user")
+@Api(value = "UserController|用户模块控制器")
 public class UserController {
 
     @Autowired // This means to get the bean called userRepository
@@ -27,6 +32,11 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("register")
+    @ApiOperation(value="用户注册", notes="--")
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(paramType="query", name = "account", value = "账号", required = true, dataType = "String"),
+//            @ApiImplicitParam(paramType="query", name = "password", value = "密码", required = true, dataType = "String"),
+//    })
     public ResponseModel register(@Valid @RequestBody UserRegisterRequestModel userRegisterRequestModel){
         ResponseModel<UserModel> userModelResponseModel = new ResponseModel();
         ResponseModel<ExceptionDescriptionModel> exceptionDescriptionResponseModel = new ResponseModel();
@@ -47,11 +57,14 @@ public class UserController {
         } catch (ServerException e) {
             if (e.getExceptionDescriptionModel() != null){
                 exceptionDescriptionResponseModel.setData(e.getExceptionDescriptionModel());
+                return  exceptionDescriptionResponseModel;
             }else {
                 ExceptionDescriptionModel exceptionDescriptionModel = new ExceptionDescriptionModel();
                 exceptionDescriptionModel.setMessage(e.getMessage());
                 exceptionDescriptionResponseModel.setData(exceptionDescriptionModel);
+                return  exceptionDescriptionResponseModel;
             }
+
         }
         return  userModelResponseModel;
     }
